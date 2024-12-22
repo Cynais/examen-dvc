@@ -1,0 +1,19 @@
+split_data:
+  data_url: "https://datascientest-mlops.s3.eu-west-1.amazonaws.com/mlops_dvc_fr/raw.csv"
+  target_column: "silica_concentrate"
+  test_size: 0.2
+  random_state: 42
+  output_dir: "data/processed"
+
+normalize_data:
+  input_dir: "data/processed"
+  output_dir: "data/processed"
+
+grid_search:
+  input_dir: "data/processed"
+  output_dir: "models"
+  param_grid:
+    n_estimators: [50, 100, 150]
+    max_depth: [10, 20, 30]
+    min_samples_split: [2, 5, 10]
+    min_samples_leaf: [1, 2, 4]
