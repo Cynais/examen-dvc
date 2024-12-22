@@ -13,7 +13,16 @@ grid_search:
   input_dir: "data/processed"
   output_dir: "models"
   param_grid:
-    n_estimators: [50, 100, 150]
+    n_estimators: [100, 150]
     max_depth: [10, 20, 30]
-    min_samples_split: [2, 5, 10]
-    min_samples_leaf: [1, 2, 4]
+  random_state: 42
+
+training:
+  input_dir: "data/processed"
+  output_dir: "models"
+
+evaluate_model:
+  input_dir: "data/processed"
+  model_dir: "models"
+  metrics_dir: "metrics"
+  prediction_dir: "data/prediction"

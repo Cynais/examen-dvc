@@ -52,7 +52,7 @@ stages:
       - data/processed/X_test_scaled.csv
       - data/processed/y_test.csv
     outs:
-      - data/prediction.csv
+      - data/prediction/prediction.csv
     metrics:
     - metrics/scores.json:
         cache: false

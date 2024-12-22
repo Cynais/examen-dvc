@@ -1,4 +1,6 @@
+dvc
 pandas==1.5.3
 scikit-learn==1.2.0
 PyYAML==6.0
 click==8.1.3
+tqdm
