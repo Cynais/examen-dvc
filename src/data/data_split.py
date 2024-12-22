@@ -1,6 +1,7 @@
 import yaml
 import click
 import pandas as pd
+import os
 from sklearn.model_selection import train_test_split
 
 @click.command()
@@ -19,6 +20,11 @@ def split_data(config_path):
     test_size = config["split_data"]["test_size"]
     random_state = config["split_data"]["random_state"]
     output_dir = config["split_data"]["output_dir"]
+
+    # Vérifier si le répertoire de sortie existe, sinon le créer
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+        click.echo(f"Le répertoire {output_dir} a été créé.")
 
     df = pd.read_csv(data_url)
     X = df.drop(columns=[target_column])
