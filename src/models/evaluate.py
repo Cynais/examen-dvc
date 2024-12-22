@@ -30,7 +30,7 @@ def evaluate_model():
         json.dump(metrics, f)
     
     # Sauvegarder les prédictions
-    pd.DataFrame({"Actual": y_test, "Predicted": predictions}).to_csv(f"{INPUT_DIR}/predictions.csv", index=False)
+    pd.DataFrame({"Actual": y_test, "Predicted": predictions}).to_csv(f"{INPUT_DIR}/prediction.csv", index=False)
 
 if __name__ == "__main__":
     evaluate_model()
